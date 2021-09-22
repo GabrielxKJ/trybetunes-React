@@ -19,9 +19,9 @@ class Header extends Component {
     this.requestUser();
   }
 
-  componentDidUpdate() {
-    this.requestUser();
-  }
+  // componentDidUpdate() {
+  //   this.requestUser();
+  // }
 
   async requestUser() {
     const user = await getUser();
@@ -31,7 +31,6 @@ class Header extends Component {
         userName: name,
         loading: false,
       });
-      console.log(name);
     }
   }
 
