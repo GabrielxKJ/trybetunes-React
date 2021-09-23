@@ -14,7 +14,7 @@ class Contents extends Component {
       <Switch>
         <Route exact path="/" component={ Login } />
         <Route path="/search" component={ Search } />
-        <Route path="/album" component={ Album } />
+        <Route path="/album/:id" component={ Album } />
         <Route exact path="/profile" component={ Profile } />
         <Route path="/profile/edit" component={ ProfileEdit } />
         <Route path="/Favorites" component={ Favorites } />
