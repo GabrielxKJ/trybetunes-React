@@ -20,37 +20,37 @@ class MusicCard extends React.Component {
       <div>
         <h2 data-testid="artist-name">{ capa.artistName }</h2>
         <h3 data-testid="album-name">{ capa.collectionName }</h3>
-        {musicsInfo.map((musics) => (
-          <div key={ musics.trackId }>
-            <h2
-              data-testid="artist-name"
-            >
-              {musics.trackName}
-            </h2>
-            <audio
-              data-testid="audio-component"
-              src={ musics.previewUrl }
-              controls
-            >
-              <track kind="captions" />
-              O seu navegador não suporta o elemento
-              {' '}
-              <code>audio</code>
-            </audio>
-            <label htmlFor={ musics.trackId }>
-              {' '}
-              Favorita
-              <input
-                type="checkbox"
-                data-testid={ `checkbox-music-${musics.trackId}` }
-                onClick={ favoriteClick }
-                defaultChecked={ this.verifyCheck(musics.trackId) }
-                value={ musics.trackId }
-                id={ musics.trackId }
-              />
-            </label>
-          </div>
-        ))}
+        {
+          musicsInfo.map((musics) => (
+            <div key={ musics.trackId }>
+              <h2>
+                {musics.trackName}
+              </h2>
+              <audio
+                data-testid="audio-component"
+                src={ musics.previewUrl }
+                controls
+              >
+                <track kind="captions" />
+                O seu navegador não suporta o elemento
+                {' '}
+                <code>audio</code>
+              </audio>
+              <label htmlFor={ musics.trackId }>
+                {' '}
+                Favorita
+                <input
+                  type="checkbox"
+                  data-testid={ `checkbox-music-${musics.trackId}` }
+                  onClick={ favoriteClick }
+                  defaultChecked={ this.verifyCheck(musics.trackId) }
+                  value={ musics.trackId }
+                  id={ musics.trackId }
+                />
+              </label>
+            </div>
+          ))
+        }
       </div>
     );
   }
